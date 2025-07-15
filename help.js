@@ -110,16 +110,18 @@ function invertOOM(x){
 
 function update() {
     var tmp = parseInt(JSON.parse(atob(localStorage.c2nv4in9eusojg59bmo)).m.points)
-    var tmp4 = parseInt(JSON.parse(atob(localStorage.c2nv4in9eusojg59bmo)).pm.points)
-    var tmp5 = parseInt(JSON.parse(atob(localStorage.c2nv4in9eusojg59bmo)).cm.points)
-    var tmp6 = parseInt(JSON.parse(atob(localStorage.c2nv4in9eusojg59bmo)).sp.sparkMilestones)
+    var tmp2 = parseInt(JSON.parse(atob(localStorage.c2nv4in9eusojg59bmo)).pm.points)
+    var tmp3 = parseInt(JSON.parse(atob(localStorage.c2nv4in9eusojg59bmo)).cm.points)
+    var tmp4 = parseInt(JSON.parse(atob(localStorage.c2nv4in9eusojg59bmo)).sp.sparkMilestones)
+    var tmp5 = parseInt(JSON.parse(atob(localStorage.c2nv4in9eusojg59bmo)).m.pseudoBuys.length)
     var player1 = 186
     var player2 = 16
     var player3 = 5
     var player4 = 4
-    var playerTotal = player1+player2+player3+player4
-    var total=tmp+tmp4+tmp5+tmp6
-	$("#milestone1").html(`Current milestones: ${total} / ${playerTotal} (${player1} Normal, ${player2} Prestige, ${player3} Corrupted, ${player4} Spark)`);
+    var player5 = 19
+    var playerTotal = player1+player2+player3+player4+player5
+    var total=tmp+tmp2+tmp3+tmp4+tmp5
+	$("#milestone1").html(`Current milestones: ${total} / ${playerTotal} (${player1} Normal, ${player5} Malware, ${player2} Prestige, ${player3} Corrupted, ${player4} Spark)`);
     $("#milestone_progressbar").html(`<div style="border:1px solid white; width:500px; color: white; font-size:22px; height:25px; background:linear-gradient(to right,#AB00A4 ${((1-(Math.max(0,(playerTotal-total)/240)))*500)}px,rgb(30, 30, 30) 0px);">${format((total/playerTotal)*100,2)}%</div>`)
 }
 setInterval(update,1000)
