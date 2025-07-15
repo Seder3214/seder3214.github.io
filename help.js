@@ -122,6 +122,6 @@ function update() {
     var playerTotal = player1+player2+player3+player4+player5
     var total=tmp+tmp2+tmp3+tmp4+tmp5
 	$("#milestone1").html(`Current milestones: ${total} / ${playerTotal} (Currently: `+(tmp==player1?`<span style='color:gold;'>[${tmp} / ${player1} Normal]</span>, `:`[${tmp} / ${player1} Normal], `)+(tmp5==player5?`<span style='color:gold;'>[${tmp5} / ${player5} Malware]</span>, `:`[${tmp5} / ${player5} Malware], `)+(tmp2==player2?`<span style='color:gold'>[${tmp2} / ${player2} Prestige]</span>, `:`[${tmp2} / ${player2} Prestige], `)+(tmp3==player3?`<span style='color:gold'[${tmp3} / ${player3} Corrupted]</span>, `:`[${tmp3} / ${player3} Corrupted], `)+(tmp4==player4?`<span style='color:gold'>[${tmp4} / ${player4} Spark]</span>)`:`[${tmp4} / ${player4} Spark])`));
-    $("#milestone_progressbar").html(`<div style="border:1px solid white; width:500px; color: white; font-size:22px; height:25px; background:linear-gradient(to right,#AB00A4 ${((1-(Math.max(0,(playerTotal-total)/240)))*500)}px,rgb(30, 30, 30) 0px);">${format((total/playerTotal)*100,2)}%</div>`)
+    $("#milestone_progressbar").html(`<div style="border:1px solid white; width:500px; color: white; font-size:22px; height:25px; background:linear-gradient(to right,#AB00A4 ${((1-(Math.max(0,(total/playerTotal)*500)}px,rgb(30, 30, 30) 0px);">${format((total/playerTotal)*100,2)}%</div>`)
 }
 setInterval(update,1000)
